@@ -38,13 +38,13 @@
         <table class="table table-sm">
           <tbody>
             <tr class="">
-              <td><img src="{{ asset('img/negro.svg') }}" width="30" alt="" srcset=""> Pendiente</td>
-              <td><img src="{{ asset('img/verde.svg') }}" width="20" alt="" srcset=""> Disponible</td>
-              <td><img src="{{ asset('img/amarillo.svg') }}" width="20" alt="" srcset="">Con Problemas</td>
+              <td><img src="{{ asset('img/negro.svg') }}" width="30" alt="" srcset=""> Accidente Vehicular</td>
+              <td><img src="{{ asset('img/verde.svg') }}" width="20" alt="" srcset=""> Accion Ciudadana</td>
+              <td><img src="{{ asset('img/amarillo.svg') }}" width="20" alt="" srcset="">Posible Siniestro</td>
             </tr>
             <tr class="">
-              <td><img src="{{ asset('img/blue.svg') }}" width="20" alt="" srcset="">Abierto</td>
-              <td><img src="{{ asset('img/rojo.svg') }}" width="20" alt="" srcset="">No disponible</td>
+
+              <td><img src="{{ asset('img/rojo.svg') }}" width="20" alt="" srcset="">Control Policial</td>
             </tr>
           </tbody>
         </table>
@@ -76,11 +76,11 @@
               <div class="form-group mb-3">
                   <label for="estado">Estado:</label>
                   <select name="estado" id="estado" class="form-control"  required>
-                      <option value="1">Pendiente</option>
-                      <option value="2">Disponible</option>
-                      <option value="3">Con Problemas</option>
-                      <option value="4">Abierto</option>
-                      <option value="5">No Existe</option>
+                      <option value="1">Grave</option>
+                      <option value="2">Medio</option>
+                      <option value="3">Intermedio</option>
+                      <option value="4">Muy Grave</option>
+                      <option value="5">Controlado</option>
                   </select>
               </div>
               <div class="mb-3">
@@ -106,7 +106,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo grifo</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Reporte</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form action="{{ route('grifos.store') }}" method="POST">

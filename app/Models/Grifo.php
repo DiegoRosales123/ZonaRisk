@@ -11,11 +11,13 @@ class Grifo extends Model
   protected $table = 'grifo';
 
   const ESTADOS = [
-    1 => ['Pendiente', 'dark'],
-    2 => ['Disponible', 'success'],
-    3 => ['Con problemas', 'warning'],
-    4 => ['Abierto', 'primary' ],
-    5 => ['Eliminado', 'danger' ]
+    1 => ['Grave', 'dark'],
+    2 => ['Medio', 'success'],
+    3 => ['Intermedio', 'warning'],
+    4 => ['Muy Grave', 'primary' ],
+    5 => ['Controlado', 'danger' ]
+
+
   ];
 
   protected $fillable = [
