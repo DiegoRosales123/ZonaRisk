@@ -13,49 +13,49 @@ return [
         'status_bar'=> 'black',
         'icons' => [
             '72x72' => [
-                'path' => '/img/bomberoslogo.png',
+                'path' => '/img/ZonaRiskLogo.png',
                 'purpose' => 'any'
             ],
             '96x96' => [
-              'path' => '/img/bomberoslogo.png',
+              'path' => '/img/ZonaRiskLogo.png',
                 'purpose' => 'any'
             ],
             '128x128' => [
-              'path' => '/img/bomberoslogo.png',
+              'path' => '/img/ZonaRiskLogo.png',
                 'purpose' => 'any'
             ],
             '144x144' => [
-              'path' => '/img/bomberoslogo.png',
+              'path' => '/img/ZonaRiskLogo.png',
                 'purpose' => 'any'
             ],
             '152x152' => [
-              'path' => '/img/bomberoslogo.png',
+              'path' => '/img/ZonaRiskLogo.png',
                 'purpose' => 'any'
             ],
             '192x192' => [
-              'path' => '/img/bomberoslogo.png',
+              'path' => '/img/ZonaRiskLogo.png',
                 'purpose' => 'any'
             ],
             '384x384' => [
-              'path' => '/img/bomberoslogo.png',
+              'path' => '/img/ZonaRiskLogo.png',
                 'purpose' => 'any'
             ],
             '512x512' => [
-              'path' => '/img/bomberoslogo.png',
+              'path' => '/img/ZonaRiskLogo.png',
                 'purpose' => 'any'
             ],
         ],
         'splash' => [
-            '640x1136' => '/img/bomberoslogo.png',
-            '750x1334' =>  '/img/bomberoslogo.png',
-            '828x1792' =>  '/img/bomberoslogo.png',
-            '1125x2436' =>  '/img/bomberoslogo.png',
-            '1242x2208' => '/img/bomberoslogo.png',
-            '1242x2688' =>  '/img/bomberoslogo.png',
-            '1536x2048' => '/img/bomberoslogo.png',
-            '1668x2224' =>  '/img/bomberoslogo.png',
-            '1668x2388' =>  '/img/bomberoslogo.png',
-            '2048x2732' =>  '/img/bomberoslogo.png',
+            '640x1136' => '/img/ZonaRiskLogo.png',
+            '750x1334' =>  '/img/ZonaRiskLogo.png',
+            '828x1792' =>  '/img/ZonaRiskLogo.png',
+            '1125x2436' =>  '/img/ZonaRiskLogo.png',
+            '1242x2208' => '/img/ZonaRiskLogo.png',
+            '1242x2688' =>  '/img/ZonaRiskLogo.png',
+            '1536x2048' => '/img/ZonaRiskLogo.png',
+            '1668x2224' =>  '/img/ZonaRiskLogo.png',
+            '1668x2388' =>  '/img/ZonaRiskLogo.png',
+            '2048x2732' =>  '/img/ZonaRiskLogo.png',
         ],
         'shortcuts' => [
             [
