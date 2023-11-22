@@ -52,7 +52,20 @@ class GrifoController extends Controller
 
   }
 
-
+  public function actualizarObservacion(Request $request, $id)
+  {
+      $grifo = Grifo::find($id);
+  
+      if (!$grifo) {
+          return response()->json(['error' => 'El incidente no fue encontrado'], 404);
+      }
+  
+      $grifo->observaciones = $request->input('observacion');
+      $grifo->save();
+  
+      return response()->json(['message' => 'Observación actualizada con éxito']);
+  }
+  
   public function update(Request $request, $id){
     try {
         $g = Grifo::findOrFail($id);

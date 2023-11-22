@@ -32,12 +32,15 @@ Route::middleware('auth.usuario')->group( function () {
   Route::get('mapa/enproblema', [ HomeController::class,'mapa3'])->name('mapa3');
   Route::get('mapa3', [ HomeController::class,'mapa3'])->name('mapa3');
 
-  Route::get('grifos', [GrifoController::class,'index'])->name('grifos.index');
-  Route::post('grifos', [GrifoController::class,'store'])->name('grifos.store');
-  Route::get('grifos/{id}', [GrifoController::class,'show'])->name('grifos.show');
-  Route::get('grifos/{id}/edit',[GrifoController::class,'edit'])->name('grifos.edit');
-  Route::put('grifos/{id}/edit',[GrifoController::class,'update'])->name('grifos.update');
-  Route::put('grifos/edit',[GrifoController::class,'updateDatos'])->name('grifos.update_a');
+  Route::get('incidentes', [GrifoController::class,'index'])->name('grifos.index');
+  Route::post('incidentes', [GrifoController::class,'store'])->name('grifos.store');
+  Route::get('incidentes/{id}', [GrifoController::class,'show'])->name('grifos.show');
+  Route::get('incidentes/{id}/edit',[GrifoController::class,'edit'])->name('grifos.edit');
+  Route::put('incidentes/{id}/edit',[GrifoController::class,'update'])->name('grifos.update');
+  Route::put('incidentes/edit',[GrifoController::class,'updateDatos'])->name('grifos.update_a');
+  Route::put('incidentes/actualizar-observacion/{id}', [GrifoController::class,'actualizarObservacion'])->name('grifos.actualizar_observacion');
+
+
 
   Route::get('reportes',[ReporteController::class,'index'])->name('reporte.index');
 

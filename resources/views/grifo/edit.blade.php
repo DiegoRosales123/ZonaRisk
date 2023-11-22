@@ -16,7 +16,10 @@
                     <option value="4" {{ $g->estatus == 4 ? 'selected' : '' }}>Muy Grave</option>
                     <option value="5" {{ $g->estatus == 5 ? 'selected' : '' }}>Controlado</option>
                 </select>
+                
             </div>
+
+
 
             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
         </form>

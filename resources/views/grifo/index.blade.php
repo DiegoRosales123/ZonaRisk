@@ -37,6 +37,7 @@
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
             <th scope="col">Año</th>
+            <th scope="col">Comentarios</th>
             <th scope="col">Ubicación</th>
             <th scope="col">Latitud/Longitud</th>
             <th scope="col"></th>
@@ -51,6 +52,7 @@
             <td>{{ $gri->id }}</td>
             <td>{{ $gri->nombre }}</td>
             <td>{{ $gri->anio }}</td>
+            <td>{{ $gri->observaciones }}</td>
             <td>{{ $gri->ubicacion }}</td>
             <td><code>{{ $gri->latitud . ' ' . $gri->longitud }}</code></td>
             <td>

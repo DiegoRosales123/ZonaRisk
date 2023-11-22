@@ -77,6 +77,7 @@ class Grifo extends Model
     public function get_rawr_info() {
       return [
         'id' => $this->id,
+        'observaciones' => $this->observaciones,
         'estado' => $this->getStatus()[0],
         'color' => $this->getStatus()[1],
         'latitud' => $this->latitud,

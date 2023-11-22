@@ -63,7 +63,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" hidden id="btnModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Reportar grifos
+  Reportar Incidentes
 </button>
 
 <!-- Modal -->
@@ -107,7 +107,7 @@
 </div>
 
 <button type="button" hidden id="btnNuew" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#example2Modal">
-  Reportar grifos
+  Reportar Incidentes
 </button>
 
 <div class="modal fade" id="example2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -231,7 +231,7 @@
     if (point.direccion) {
       marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Direccion:</b> " + point.direccion);
     } else{
-      marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Estado:</b> " + point.estado);
+      marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Estado:</b> " + point.estado + "<br><b>Comentarios:</b> " + point.observaciones);
 
     }
 
@@ -309,6 +309,37 @@
   myModalEl.addEventListener('hidden.bs.modal', event => {
     modalOpen = false;
   });
+
+
+
+  document.getElementById('comentario').addEventListener('change', function() {
+    var comentario = this.value; // Obtener el valor del campo de texto
+    var id_global = document.getElementById('id_global').value; // Obtener el ID del marcador
+
+    // Hacer una solicitud AJAX para actualizar la observación
+    fetch(`/incidentes/actualizar-observacion/${id_global}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF si es necesario
+        },
+        body: JSON.stringify({
+            observacion: comentario
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            // Observación actualizada exitosamente, podrías mostrar un mensaje o realizar alguna acción adicional si es necesario
+            console.log('Observación actualizada con éxito');
+        } else {
+            // Manejar errores si la solicitud no se completó correctamente
+            console.error('Error al actualizar la observación');
+        }
+    })
+    .catch(error => {
+        console.error('Error de red:', error);
+    });
+});
 
 </script>
 @endpush
