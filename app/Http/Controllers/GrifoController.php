@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grifo;
 use App\Models\Reporte;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GrifoController extends Controller
 {
@@ -29,28 +30,44 @@ class GrifoController extends Controller
     }
   }
 
-  public function store(Request $request){
 
+
+  //Agregar FOTO
+
+  //.....................................................................................................
+  
+  public function store(Request $request)
+{
     try {
-      $latitud = $request->input('latitud');
-      $longitud = $request->input('longitud');
-      $estado = $request->input('estado');
-      $comentario = $request->input('comentario');
+        $latitud = $request->input('latitud');
+        $longitud = $request->input('longitud');
+        $estado = $request->input('estado');
+        $comentario = $request->input('comentario');
 
-      $g = new Grifo();
-      $g->latitud = $latitud;
-      $g->longitud = $longitud;
-      $g->estatus = $estado;
-      $g->observaciones = $comentario;
-      $g->save();
+        $g = new Grifo();
+        $g->latitud = $latitud;
+        $g->longitud = $longitud;
+        $g->estatus = $estado;
+        $g->observaciones = $comentario;
 
+        // Subir y guardar la foto si está presente en la solicitud
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+            $nombreArchivo = time() . '_' . $foto->getClientOriginalName();
+            $ruta = $foto->storeAs('img', $nombreArchivo, 'public'); // Almacenar la foto en public/img
 
-      return back()->with('success','se ha registrado');
+            // Establecer la ruta de la foto en la base de datos
+            $g->ruta_foto = '/storage/' . $ruta; // Ajusta la ruta según tu estructura de almacenamiento
+        }
+
+        $g->save();
+
+        return back()->with('success', 'Se ha registrado correctamente');
     } catch (\Throwable $th) {
-      return back()->with('danger','no se ha podido registrar');
+        return back()->with('danger', 'No se ha podido registrar el incidente');
     }
+}
 
-  }
 
   public function actualizarObservacion(Request $request, $id)
   {

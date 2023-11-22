@@ -74,7 +74,7 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Reportar/Editar Incidente</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="{{ route('grifos.update_a') }}" method="POST">
+      <form action="{{ route('grifos.update_a') }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="modal-body">
@@ -92,15 +92,14 @@
                   </select>
               </div>
               <div class="mb-3">
-                <label for="comentario" class="form-label">Comentario</label>
-                <textarea class="form-control" name="comentario" id="comentario" rows="3"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Guardar</button>
-        </div>
+      <label for="comentario" class="form-label">Comentario</label>
+      <textarea class="form-control" name="comentario" id="comentario" rows="3"></textarea>
+    </div>
+  </div>
+  <input type="file" name="foto" id="foto">
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </div>
       </form>
     </div>
   </div>
@@ -213,27 +212,33 @@
 
 
   for (var i = 0; i < data.length; i++) {
-    var point = data[i];
-    var estado = '0';
-    if (point.estado) {
-      estado = point.estado;
+  var point = data[i];
+  var estado = '0';
+  if (point.estado) {
+    estado = point.estado;
+  }
+
+  var marker = L.marker([point.latitud, point.longitud], {
+      pointId: point.id,
+      pointStatus: estado,
+      icon: L.icon({
+        iconUrl: point.img,
+        iconSize: [25, 25]
+      })
+  }).addTo(map);
+
+  if (point.direccion) {
+    marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Direccion:</b> " + point.direccion);
+  } else {
+    var popupContent = "<b>ID:</b> " + point.id + "<br><b>Estado:</b> " + point.estado + "<br><b>Comentarios:</b> " + point.observaciones;
+
+    // Verificar si hay una ruta de foto y agregar la etiqueta de imagen al popup si existe
+    if (point.ruta_foto) {
+      popupContent += "<br><img src='" + point.ruta_foto + "' width='150' alt='Foto del incidente'>";
     }
 
-    var marker = L.marker([point.latitud, point.longitud], {
-        pointId: point.id,
-        pointStatus: estado,
-        icon: L.icon({
-          iconUrl: point.img,
-          iconSize: [25, 25]
-        })
-    }).addTo(map);
-
-    if (point.direccion) {
-      marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Direccion:</b> " + point.direccion);
-    } else{
-      marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Estado:</b> " + point.estado + "<br><b>Comentarios:</b> " + point.observaciones);
-
-    }
+    marker.bindPopup(popupContent);
+  }
 
     marker.on('mouseover', function(e) {
         this.openPopup();
