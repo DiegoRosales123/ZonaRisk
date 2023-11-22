@@ -29,21 +29,21 @@ return new class extends Migration
         $u->nombre = "Benjamin";
         $u->correo = "benja@gmail.com";
         $u->password = "123123";
-        $u->cargo = "Administrador";
+        $u->cargo = "Bombero";
         $u->save();
 
         $u = new Usuario();
         $u->nombre = "Carlos";
         $u->correo = "carlos@gmail.com";
         $u->password = "123123";
-        $u->cargo = "Usuario";
+        $u->cargo = "Capitan Bombero";
         $u->save();
 
         $u = new Usuario();
         $u->nombre = "Leonardo";
         $u->correo = "leonardo@gmail.com";
         $u->password = "123123";
-        $u->cargo = "Usuario";
+        $u->cargo = "Bombero";
         $u->save();
     }
 

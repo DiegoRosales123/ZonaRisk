@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
 <style>
     #map {
-        height: 400px;
+        height: 800px;
     }
 
     /* Fondo de la página */
@@ -35,7 +35,7 @@
 <div class="container">
   <div class="row">
     {{-- <button onclick="mostrarPosicion()" class="btn btn-primary">Mostrar Posición</button> --}}
-    <h2>🚓 Mapa de maipu</h2>
+    <h2>🚓 Mapa Cercano</h2>
     <div class="mt-3">
       <div id="map" class="shadow"></div>
     </div>

@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
 <style>
     #map {
-        height: 400px;
+        height: 800px;
     }
     body {
   background-image: url('img/mapas.jpeg');
@@ -43,13 +43,13 @@
         <table class="table table-sm">
           <tbody>
             <tr class="">
-              <td><img src="{{ asset('img/negro.svg') }}" width="30" alt="" srcset=""> Normal</td>
-              <td><img src="{{ asset('img/verde.svg') }}" width="20" alt="" srcset=""> Grave</td>
-              <td><img src="{{ asset('img/amarillo.svg') }}" width="20" alt="" srcset="">Intermedio</td>
+              <td><img src="{{ asset('img/purpura.svg') }}" width="50" alt="" srcset=""> Normal</td>
+              <td><img src="{{ asset('img/narajo.svg') }}" width="50" alt="" srcset=""> Grave</td>
+              <td><img src="{{ asset('img/amarillo.svg') }}" width="50" alt="" srcset="">Intermedio</td>
             </tr>
             <tr class="">
-              <td><img src="{{ asset('img/blue.svg') }}" width="20" alt="" srcset="">Muy Grave</td>
-              <td><img src="{{ asset('img/rojo.svg') }}" width="20" alt="" srcset="">Controlado</td>
+              <td><img src="{{ asset('img/rojo.svg') }}" width="50" alt="" srcset="">Muy Grave</td>
+              <td><img src="{{ asset('img/verde.svg') }}" width="50" alt="" srcset="">Controlado</td>
             </tr>
           </tbody>
         </table>
