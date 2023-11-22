@@ -39,11 +39,7 @@ Route::middleware('auth.usuario')->group( function () {
   Route::put('incidentes/{id}/edit',[GrifoController::class,'update'])->name('grifos.update');
   Route::put('incidentes/edit',[GrifoController::class,'updateDatos'])->name('grifos.update_a');
   Route::put('incidentes/actualizar-observacion/{id}', [GrifoController::class,'actualizarObservacion'])->name('grifos.actualizar_observacion');
-
-
-
   Route::get('reportes',[ReporteController::class,'index'])->name('reporte.index');
-
 
   Route::resource('usuarios', UsuarioController::class);
 });
