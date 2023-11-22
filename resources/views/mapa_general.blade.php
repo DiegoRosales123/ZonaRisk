@@ -5,6 +5,9 @@
     #map {
         height: 800px;
     }
+    .white-text {
+    color: white;
+  }
     body {
   background-image: url('img/mapas.jpeg');
   background-size: cover;
@@ -33,7 +36,7 @@
 <div class="container">
   <div class="row">
     {{-- <button onclick="mostrarPosicion()" class="btn btn-primary">Mostrar Posición</button> --}}
-    <h2>🚓 Mapa General de Santiago</h2>
+    <h2 class="text-white">🚓 Mapa General de Santiago</h2>
     <div class="mt-3">
       <div id="map" class="shadow"></div>
     </div>

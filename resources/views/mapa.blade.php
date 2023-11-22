@@ -5,6 +5,9 @@
     #map {
         height: 800px;
     }
+    .white-text {
+    color: white;
+  }
 
     /* Fondo de la página */
     body {
@@ -35,7 +38,7 @@
 <div class="container">
   <div class="row">
     {{-- <button onclick="mostrarPosicion()" class="btn btn-primary">Mostrar Posición</button> --}}
-    <h2>🚓 Mapa Cercano</h2>
+    <h2 class="text-white">🚓 Mapa Cercano</h2>
     <div class="mt-3">
       <div id="map" class="shadow"></div>
     </div>
