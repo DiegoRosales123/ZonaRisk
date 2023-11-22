@@ -68,7 +68,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Reportar grifo</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Reportar/Editar Incidente</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form action="{{ route('grifos.update_a') }}" method="POST">
@@ -111,7 +111,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo grifo</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Nuevo Incidente</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form action="{{ route('grifos.store') }}" method="POST">
